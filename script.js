@@ -1,3 +1,4 @@
+
 const take = (selector) => document.querySelector(selector);
 
 const input = take("input");
@@ -8,10 +9,10 @@ const button = take(".btn");
 const result = take(".result");
 
 const users = {
-  121: "par",
-  122: "moh",
-  133: "md",
-  144: "sk",
+  121: "Your_Brain;",
+  122: "Mohan",
+  133: "Md",
+  144: "Sk",
 };
 
 document.addEventListener("DOMContentLoaded", function () {
