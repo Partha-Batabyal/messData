@@ -1,205 +1,194 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color: #1a1a1a;
-    transition: all 0.2s ease-in-out ;
-}
-.wrapper{
-
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center
-}
-.box{
-    background-color: #1a1a1a;
-    width: 70%;
-    height: 70%;
-}
-.wrInput{
-    width: 100%;
-    height: 20%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    background-color: rgb(0, 0, 0);
-
-}
-.input1{
-    width: 70%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+body {
+  background-color: #1a1a1a;
+  transition: all 0.2s ease-in-out;
 }
 
-input{
-    width: 50%;
-    height: 40%;
-    border: none;
-    outline: none;
-    font-size: 20px;
-    background: transparent;
-    border: 2px solid rgb(255, 255, 255);
-    border-radius: 10px;
-    padding:4px 10px 4px 10px;
-    color: antiquewhite;
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-input:focus{
-    border: 2px solid rgb(68, 255, 0);
-    color: antiquewhite;
+.box {
+  background-color: #1a1a1a;
+  width: 70%;
+  height: 70%;
 }
-.wrOutput{
-
-    width: 100%;
-    height: 80%;
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    /* align-items: center; */
+.wrInput {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: rgb(0, 0, 0);
 }
-.ol{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    overflow-y: scroll;
-
+.input1 {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
---webkit-scrollbar{
-    display: none;
+input {
+  width: 50%;
+  height: 40%;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  background: transparent;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 4px 10px 4px 10px;
+  color: antiquewhite;
 }
 
-.ol::-webkit-scrollbar{
-    display: none;
-}
-.lol{
-    font-size: 30px;
-
-    cursor: pointer;
-    color: rgb(68, 255, 0);
-
-}
-#cross{
-    font-size: 30px;
-    font-weight: 900;
-    cursor: pointer;
-    color: red;
+input:focus {
+  border: 2px solid rgb(68, 255, 0);
+  color: antiquewhite;
 }
 
-.ol>li{
-    width: 100%;
-    /* height: 100%; */
-    color: rgb(158, 138, 112);
-    font-size: 22px;
+.wrOutput {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  /* align-items: center; */
+}
+.ol {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  overflow-y: scroll;
 }
 
-.li:hover{
-    color: rgb(68, 255, 0);
-}
-.red-on-hover:hover{
-    color: red;}
-
-
-
-.btn{
-    position: fixed;
-    width: 120px;
-    height: 40px;
-    border: none;
-    outline: none;
-    background-color: #efefef3e;
-    color: rgb(255, 0, 0);
-    font-size: 20px;
-    border-radius: 10px;
-    display: none;
-     margin-top: 85vh;
-    margin-left: 63vw;
-
-
-
-
+--webkit-scrollbar {
+  display: none;
 }
 
+.ol::-webkit-scrollbar {
+  display: none;
+}
+.lol {
+  font-size: 30px;
 
-.btn:active:hover{
-    background-color: rgb(255, 0, 0);
-    color: rgb(255, 255, 255);
+  cursor: pointer;
+  color: rgb(68, 255, 0);
 }
-.result{
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    background-color: rgb(62, 116, 4);
-    border-radius: 50%;
-    margin-top: 90vh;
-    margin-left: 80vw;
-    transition: all 0.2s ease ;
+#cross {
+  font-size: 30px;
+  font-weight: 900;
+  cursor: pointer;
+  color: red;
 }
-.large{
-    border-radius: 8px;
-    width: 90px;
-    height: 50px;
-    margin-left: 65vw;
-    transition: all 0.2s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    color: rgb(255, 255, 255);
-    background-color: rgba(91, 173, 28, 0.638);
+
+.ol > li {
+  width: 100%;
+  /* height: 100%; */
+  color: rgb(158, 138, 112);
+  font-size: 22px;
+}
+
+.li:hover {
+  color: rgb(68, 255, 0);
+}
+.red-on-hover:hover {
+  color: red;
+}
+
+.btn {
+  position: fixed;
+  width: 110px;
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: #efefef3e;
+  color: rgb(255, 0, 0);
+  font-size: 20px;
+  border-radius: 10px;
+  display: none;
+  margin-top: 85vh;
+  margin-left: 63vw;
+  cursor: pointer;
+}
+
+.btn:active:hover {
+  background-color: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
+}
+.result {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(62, 116, 4);
+  border-radius: 50%;
+  margin-top: 90vh;
+  margin-left: 80vw;
+  transition: all 0.2s ease;
+}
+.large {
+  border-radius: 8px;
+  width: 90px;
+  height: 50px;
+  margin-left: 65vw;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(91, 173, 28, 0.638);
 }
 
 @media screen and (max-width: 768px) {
-    .box{
-        width: 100%;
-        height: 100%;
-    }
-    .wrInput{
-        height: 10%;
-
-    }
-    .wrOutput{
-        height: 90%;
-    }
-
-
-
+  .box {
+    width: 100%;
+    height: 100%;
+  }
+  .wrInput {
+    height: 10%;
+  }
+  .wrOutput {
+    height: 90%;
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .box{
-        width: 90%;
-        height: 90%;
-        /* background-color: aqua; */
-    }
-    .result{
-        width: 60px;
-        height: 60px;
-        margin-top: 83vh;
-        margin-left: 87vw;
-        cursor: pointer;
-    }
-    .large{
-        width: 120px;
-        height: 70px;
-    }
-    .wrInput{
-        background-color: #111010;
-        border-radius: 8px;
-    }
-    .btn{
-         margin-top: 72vh;
+  .box {
+    width: 90%;
+    height: 90%;
+    /* background-color: aqua; */
+  }
+  .result {
+    width: 60px;
+    height: 60px;
+    margin-top: 83vh;
     margin-left: 87vw;
-    }
+    cursor: pointer;
+  }
+  .large {
+    width: 120px;
+    height: 70px;
+  }
+  .wrInput {
+    background-color: #111010;
+    border-radius: 8px;
+  }
+  .btn {
+    margin-top: 72vh;
+    margin-left: 87vw;
+  }
 }

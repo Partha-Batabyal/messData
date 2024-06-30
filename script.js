@@ -12,6 +12,7 @@ const users = {
   122: "Mohan",
   133: "Md",
   144: "Sk",
+  111:"user",
 };
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -23,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function handleFocus() {
     if (!otpVerified) {
-      let otp = prompt("Enter the OTP (3 digits):");
+      var otp = prompt("Enter the OTP (3 digits):");
 
       if (otp && users.hasOwnProperty(otp)) {
         swal({
@@ -148,7 +149,9 @@ document.addEventListener("DOMContentLoaded", function () {
         timer: 2000,
         confirmButtonText: "Ok",
       });
-      return;
+
+
+      return otp;
     }
 
     let removedItemContent = element.parentNode.textContent.trim();
@@ -188,7 +191,6 @@ document.addEventListener("DOMContentLoaded", function () {
       button.style.display = "block";
     } else {
       button.style.display = "none";
-
     }
     setInterval(() => {
       if (result.classList.contains("large")) {
