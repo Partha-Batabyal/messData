@@ -27,13 +27,25 @@ document.addEventListener("DOMContentLoaded", function () {
       let otp = prompt("Enter the OTP (3 digits):");
 
       if (otp && users.hasOwnProperty(otp)) {
-        alert("OTP verified!");
+        swal({
+          title: "Good job!",
+          text: "OTP verified successfully!",
+          type: "success",
+          timer: 2000,
+          confirmButtonText: "Ok",
+        });
         otpVerified = true;
         verifiedUser = users[otp];
         input.disabled = false;
         input.focus();
       } else {
-        alert("Invalid OTP. Please try again.");
+        swal({
+          title: "Oops!",
+          text: "OTP is invalid!",
+          type: "error",
+          timer: 2000,
+          confirmButtonText: "Ok",
+        });
         input.blur();
       }
     }
@@ -86,10 +98,22 @@ document.addEventListener("DOMContentLoaded", function () {
         saveItems();
         updateTotalValda(); // Update totalValda after adding item
       } else {
-        alert("Please verify OTP first.");
+         swal({
+           title: "Oops!",
+           text: "Please verify OTP first.",
+           type: "error",
+           timer: 2000,
+           confirmButtonText: "Ok",
+         });
       }
     } else {
-      alert("Input fields are empty or invalid.");
+       swal({
+         title: "Oops!",
+         text: "invalid input",
+         type: "error",
+         timer: 2000,
+         confirmButtonText: "Ok",
+       });
     }
   }
 
@@ -116,7 +140,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.removeItem = function (element) {
     if (!otpVerified) {
-      alert("Please verify OTP first.");
+       swal({
+         title: "Oops!",
+         text: "Please verify OTP first.",
+         type: "error",
+         timer: 2000,
+         confirmButtonText: "Ok",
+       });
       return;
     }
 
