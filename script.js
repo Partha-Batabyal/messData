@@ -1,4 +1,3 @@
-
 const take = (selector) => document.querySelector(selector);
 
 const input = take("input");
@@ -88,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let listItemContent = `Things: ${data}  Rs: ${valdaValue} (${currentDateTime} - ${verifiedUser}) - ${cross}`;
 
         let li = createListItem(listItemContent);
+        li.classList.add("green-on-hover"); // Add green hover class
         output.insertBefore(li, output.firstChild);
 
         totalValda += valdaValue;
@@ -98,22 +98,22 @@ document.addEventListener("DOMContentLoaded", function () {
         saveItems();
         updateTotalValda(); // Update totalValda after adding item
       } else {
-         swal({
-           title: "Oops!",
-           text: "Please verify OTP first.",
-           type: "error",
-           timer: 2000,
-           confirmButtonText: "Ok",
-         });
+        swal({
+          title: "Oops!",
+          text: "Please verify OTP first.",
+          type: "error",
+          timer: 2000,
+          confirmButtonText: "Ok",
+        });
       }
     } else {
-       swal({
-         title: "Oops!",
-         text: "invalid input",
-         type: "error",
-         timer: 2000,
-         confirmButtonText: "Ok",
-       });
+      swal({
+        title: "Oops!",
+        text: "Invalid input",
+        type: "error",
+        timer: 2000,
+        confirmButtonText: "Ok",
+      });
     }
   }
 
@@ -129,6 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function createListItem(content) {
     let li = document.createElement("li");
+    li.classList.add("li");
     li.innerHTML = `${content}`;
     return li;
   }
@@ -140,13 +141,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.removeItem = function (element) {
     if (!otpVerified) {
-       swal({
-         title: "Oops!",
-         text: "Please verify OTP first.",
-         type: "error",
-         timer: 2000,
-         confirmButtonText: "Ok",
-       });
+      swal({
+        title: "Oops!",
+        text: "Please verify OTP first.",
+        type: "error",
+        timer: 2000,
+        confirmButtonText: "Ok",
+      });
       return;
     }
 
@@ -157,6 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let removedLog = `${verifiedUser} removed: ${removedItemContent}`;
 
     let li = createListItem(removedLog);
+    li.classList.add("red-on-hover"); // Add red hover class
     output.insertBefore(li, output.firstChild);
 
     totalValda -= removeValda;
@@ -177,18 +179,23 @@ document.addEventListener("DOMContentLoaded", function () {
     // Save the updated totalValda to local storage
     localStorage.setItem("totalValda", totalValda);
     console.log("Updated Total Valda:", totalValda);
-    }
+  }
 
   result.addEventListener("click", function () {
-      result.classList.toggle("large");
+    result.innerText = "";
+    result.classList.toggle("large");
+    if (result.classList.contains("large")) {
+      button.style.display = "block";
+    } else {
+      button.style.display = "none";
+
+    }
+    setInterval(() => {
       if (result.classList.contains("large")) {
-          result.innerText = totalValda; // Fix typo: innerText instead of innertext
-
+        result.innerText = totalValda;
       } else {
-          result.innerText = "";
+        result.innerText = "";
       }
+    }, 1000);
   });
-
-
-
 });
