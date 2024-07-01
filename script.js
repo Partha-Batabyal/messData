@@ -3,6 +3,7 @@ const take = (selector) => document.querySelector(selector);
 const input = take("input");
 const valdata = take("input#value");
 const check = take(".lol");
+const britto = take(".britto");
 const output = take(".ol");
 const button = take(".btn");
 const result = take(".result");
@@ -12,7 +13,7 @@ const users = {
   122: "Mohan",
   133: "Md",
   144: "Sk",
-  111:"user",
+  111: "user",
 };
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -31,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
           title: "Good job!",
           text: "OTP verified successfully!",
           type: "success",
-          timer: 2000,
+          timer: 1700,
           confirmButtonText: "Ok",
         });
         otpVerified = true;
@@ -43,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
           title: "Oops!",
           text: "OTP is invalid!",
           type: "error",
-          timer: 2000,
+          timer: 1700,
           confirmButtonText: "Ok",
         });
         input.blur();
@@ -76,7 +77,20 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   check.addEventListener("click", handleClick);
-
+  britto.addEventListener("click", handleClick);
+  input.addEventListener("keypress", function (event) {
+    if (event.key === "Tab") {
+      valdata.focus();
+    }
+  })
+  document.addEventListener("keypress", function (event) {
+    if (input.value !== "" && valdata.value !== "") {
+      if (event.key === "Enter") {
+        handleClick();
+        input.focus();
+      }
+    }
+  })
   function handleClick() {
     let data = input.value.trim();
     let valdaValue = parseFloat(valdata.value.trim());
@@ -103,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
           title: "Oops!",
           text: "Please verify OTP first.",
           type: "error",
-          timer: 2000,
+          timer: 1700,
           confirmButtonText: "Ok",
         });
       }
@@ -112,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
         title: "Oops!",
         text: "Invalid input",
         type: "error",
-        timer: 2000,
+        timer: 1700,
         confirmButtonText: "Ok",
       });
     }
@@ -146,10 +160,9 @@ document.addEventListener("DOMContentLoaded", function () {
         title: "Oops!",
         text: "Please verify OTP first.",
         type: "error",
-        timer: 2000,
+        timer: 1700,
         confirmButtonText: "Ok",
       });
-
 
       return otp;
     }
