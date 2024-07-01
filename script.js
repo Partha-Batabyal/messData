@@ -79,8 +79,10 @@ document.addEventListener("DOMContentLoaded", function () {
   check.addEventListener("click", handleClick);
   britto.addEventListener("click", handleClick);
   input.addEventListener("keypress", function (event) {
-    if (event.key === "Tab") {
-      valdata.focus();
+
+      if (event.key === "Tab") {
+        valdata.focus();
+
     }
   })
   document.addEventListener("keypress", function (event) {
@@ -214,3 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
   });
 });
+
+
+
+document.addEventListener("contextmenu", (event) => event.preventDefault());
