@@ -66,6 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!item.includes("removed")) {
         let valdaValue = extractValdaValue(item);
         totalValda += valdaValue;
+      } else {
+        li.classList.add("red-on-hover"); // Add red hover class for removed items
       }
     });
 
@@ -79,12 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
   check.addEventListener("click", handleClick);
   britto.addEventListener("click", handleClick);
   input.addEventListener("keypress", function (event) {
-
-      if (event.key === "Tab") {
-        valdata.focus();
-
+    if (event.key === "Tab") {
+      valdata.focus();
     }
-  })
+  });
   document.addEventListener("keypress", function (event) {
     if (input.value !== "" && valdata.value !== "") {
       if (event.key === "Enter") {
@@ -92,11 +92,11 @@ document.addEventListener("DOMContentLoaded", function () {
         input.focus();
       }
     }
-  })
+  });
   function handleClick() {
     let data = input.value.trim();
     let valdaValue = parseFloat(valdata.value.trim());
-
+    //removeItem
     if (data !== "" && !isNaN(valdaValue)) {
       if (otpVerified) {
         let currentDateTime = new Date().toLocaleString();
@@ -139,6 +139,10 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleClear() {
     output.innerHTML = "";
     localStorage.removeItem("listItems");
+    // ** set hover red after the close and re open the window
+
+    // localStorage.removeItem("listItems");
+
     totalValda = 0;
     updateTotalValda(); // Update totalValda after clearing items
     saveItems();
@@ -176,7 +180,10 @@ document.addEventListener("DOMContentLoaded", function () {
     let removedLog = `${verifiedUser} removed: ${removedItemContent}`;
 
     let li = createListItem(removedLog);
-    li.classList.add("red-on-hover"); // Add red hover class
+
+    li.classList.add("red-on-hover");
+
+    // Add red hover class
     output.insertBefore(li, output.firstChild);
 
     totalValda -= removeValda;
@@ -216,7 +223,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
   });
 });
-
-
 
 document.addEventListener("contextmenu", (event) => event.preventDefault());
