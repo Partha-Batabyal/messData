@@ -170,6 +170,7 @@ input:focus {
   font-size: 30px;
   color: rgb(255, 255, 255);
   background-color: rgba(91, 173, 28, 0.638);
+  padding: 18px;
 }
 
 @media screen and (max-width: 768px) {
@@ -182,6 +183,16 @@ input:focus {
   }
   .wrOutput {
     height: 90%;
+  }
+  .btn {
+    margin-top: 79vh;
+    margin-left: 58vw;
+  }
+  .large {
+  border-radius: 8px;
+  width: 100px;
+  margin-left: 60vw;
+
   }
 }
 
