@@ -10,8 +10,8 @@ body {
 }
 
 ::selection {
-  background-color: rgb(0, 0, 0);
-  color: rgb(0, 131, 22);
+  background-color: rgba(0, 0, 0, 0.329);
+  color: rgb(145, 0, 164);
   font-weight: 900;
 }
 
@@ -189,10 +189,9 @@ input:focus {
     margin-left: 58vw;
   }
   .large {
-  border-radius: 8px;
-  width: 100px;
-  margin-left: 60vw;
-
+    border-radius: 8px;
+    width: 100px;
+    margin-left: 60vw;
   }
 }
 
